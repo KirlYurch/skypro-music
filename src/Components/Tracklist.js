@@ -1,6 +1,16 @@
+import { useState } from "react";
+import Filter from "./Filter";
 import { GetTracks } from "./Track";
 
-export default function Tracklist() {
+
+const genres = ['Рок', 'Техно', 'Поп', 'Металл', 'Панк-рок'];
+const years = [1992, 1993, 1994];
+const author = ['Nero','Dynoro, Outwork, Mr.Gee', 'Ali Bakgor', 'Стоункат, Psychopath', 'Jaded, Will Clarke, AR/CO', 'Blue Foundation, Zeds Dead']
+
+export default function Tracklist({ isLoading }) {
+    
+    const [activeIndex, setActiveIndex] = useState(0);
+
     return (
         <div className="main__centerblock centerblock">
         <div className="centerblock__search search">
@@ -17,14 +27,10 @@ export default function Tracklist() {
         <h2 className="centerblock__h2">Треки</h2>
         <div className="centerblock__filter filter">
           <div className="filter__title">Искать по:</div>
-          <div className="filter__button button-author _btn-text">
-            исполнителю
-          </div>
-          <div className="filter__button button-year _btn-text">
-            году выпуска
-          </div>
-          <div className="filter__button button-genre _btn-text">жанру</div>
-        </div>
+          <Filter type='исполнителю' filterName={author} isActive={activeIndex === 1} onShow={() => setActiveIndex(1)} onHide={() => setActiveIndex(0)} />
+          <Filter type='году выпуска' filterName={years} isActive={activeIndex === 2} onShow={() => setActiveIndex(2)} onHide={() => setActiveIndex(0)} />
+          <Filter type='жанру' filterName={genres} isActive={activeIndex === 3} onShow={() => setActiveIndex(3)} onHide={() => setActiveIndex(0)} />          
+        </div>  
         <div className="centerblock__content">
           <div className="content__title playlist-title">
             <div className="playlist-title__col col01">Трек</div>
@@ -37,7 +43,7 @@ export default function Tracklist() {
             </div>
           </div>
           <div className="content__playlist playlist">
-            <GetTracks />
+            <GetTracks isLoading={isLoading}/>
           </div>
         </div>
       </div>
