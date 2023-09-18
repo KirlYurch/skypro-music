@@ -1,22 +1,22 @@
-import { Playlist } from "./Playlist";
-
+import { Playlist } from "./PlayList.js";
+import * as S from './SidebarStyle.js'
 
 export default function Sidebar({ isLoading }) {
     return (
-        <div className="main__sidebar sidebar">
-        <div className="sidebar__personal">
-          <p className="sidebar__personal-name"></p>
-          <div className="sidebar__icon">
+        <S.MainSidebar>
+        <S.SidebarPersonal>
+          <S.SidebarPersonalName></S.SidebarPersonalName>
+          <S.SidebarIcon>
             <svg alt="logout">
               <use xlinkHref="img/icon/sprite.svg#logout" />
             </svg>
-          </div>
-        </div>
-        <div className="sidebar__block">
-          <div className="sidebar__list">
+          </S.SidebarIcon>
+        </S.SidebarPersonal>
+        <S.SidebarBlock>
+          <S.SidebarList>
             <Playlist isLoading={isLoading}/>
-          </div>
-        </div>
-      </div>
+          </S.SidebarList>
+        </S.SidebarBlock>
+      </S.MainSidebar>
     );
 }

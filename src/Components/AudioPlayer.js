@@ -1,91 +1,92 @@
+import * as S from './AudioPlayerStyle.js'
+
 export default function AudioPlayer({ isLoading }) {
   return (
-      <div className="bar">
-    <div className="bar__content">
-      <div className="bar__player-progress" />
-      <div className="bar__player-block">
-        <div className="bar__player player">
-          <div className="player__controls">
-            <div className="player__btn-prev">
-              <svg className="player__btn-prev-svg" alt="prev">
+      <S.Bar>
+    <S.BarContent>
+      <S.BarPlayerProgress />
+      <S.BarPlayerBlock>
+        <S.BarPlayer>
+          <S.PlayerControls>
+            <S.PlayerBtnPrev>
+              <S.PlayerBtnPrevSVG alt="prev">
                 <use xlinkHref="img/icon/sprite.svg#icon-prev" />
-              </svg>
-            </div>
-            <div className="player__btn-play _btn">
-              <svg className="player__btn-play-svg" alt="play">
+              </S.PlayerBtnPrevSVG>
+            </S.PlayerBtnPrev>
+            <S.PlayerBtnPlay>
+              <S.PlayerBtnPlaySVG alt="play">
                 <use xlinkHref="img/icon/sprite.svg#icon-play" />
-              </svg>
-            </div>
-            <div className="player__btn-next">
-              <svg className="player__btn-next-svg" alt="next">
+              </S.PlayerBtnPlaySVG>
+            </S.PlayerBtnPlay>
+            <S.PlayerBtnNext>
+              <S.PlayerBtnNextSVG alt="next">
                 <use xlinkHref="img/icon/sprite.svg#icon-next" />
-              </svg>
-            </div>
-            <div className="player__btn-repeat _btn-icon">
-              <svg className="player__btn-repeat-svg" alt="repeat">
+              </S.PlayerBtnNextSVG>
+            </S.PlayerBtnNext>
+            <S.PlayerBtnRepeat>
+              <S.PlayerBtnRepeatSVG alt="repeat">
                 <use xlinkHref="img/icon/sprite.svg#icon-repeat" />
-              </svg>
-            </div>
-            <div className="player__btn-shuffle _btn-icon">
-              <svg className="player__btn-shuffle-svg" alt="shuffle">
+              </S.PlayerBtnRepeatSVG>
+            </S.PlayerBtnRepeat>
+            <S.PlayerBtnShuffle>
+              <S.PlayerBtnShuffleSVG alt="shuffle">
                 <use xlinkHref="img/icon/sprite.svg#icon-shuffle" />
-              </svg>
-            </div>
-          </div>
-          <div className="player__track-play track-play">
-            <div className="track-play__contain">
-              <div className="track-play__image">
-                <svg className="track-play__svg" alt="music">
+              </S.PlayerBtnShuffleSVG>
+            </S.PlayerBtnShuffle>
+          </S.PlayerControls>
+          <S.PlayerTrackPlay>
+            <S.PlayerTrackPlayContain>
+              <S.PlayerTrackPlayImage>
+                <S.PlayerTrackPlaySVG alt="music">
                   <use xlinkHref="img/icon/sprite.svg#icon-note" />
-                </svg>
-              </div>
-              <div className="track-play__author">
+                </S.PlayerTrackPlaySVG>
+              </S.PlayerTrackPlayImage>
+              <S.PlayerTrackPlayAuthor>
                 {isLoading
-                ? <div className="player__author-link_loading" />
-                : <a className="track-play__author-link" href="http://">
+                ? <S.PlayerTrackPlayAuthorLoading />
+                : <S.PlayerTrackPlayAuthorLink href="#">
                 Ты та...
-              </a>}
-              </div>
-              <div className="track-play__album">
+              </S.PlayerTrackPlayAuthorLink>}
+              </S.PlayerTrackPlayAuthor>
+              <S.PlayerTrackPlayAlbum>
                 {isLoading
-                ? <div className="player__author-link_loading" />
-                : <a className="track-play__album-link" href="http://">
+                ? <S.PlayerTrackPlayAuthorLoading />
+                : <S.PlayerTrackPlayAlbumLink href="#">
                 Баста
-              </a>}
-              </div>
-            </div>
-            <div className="track-play__like-dis">
-              <div className="track-play__like _btn-icon">
-                <svg className="track-play__like-svg" alt="like">
+              </S.PlayerTrackPlayAlbumLink>}
+              </S.PlayerTrackPlayAlbum>
+            </S.PlayerTrackPlayContain>
+            <S.TrackLikeDis>
+              <S.TrackPlayLike>
+                <S.TrackPlayLikeSVG alt="like">
                   <use xlinkHref="img/icon/sprite.svg#icon-like" />
-                </svg>
-              </div>
-              <div className="track-play__dislike _btn-icon">
-                <svg className="track-play__dislike-svg" alt="dislike">
+                </S.TrackPlayLikeSVG>
+              </S.TrackPlayLike>
+              <S.TrackPlayDislike>
+                <S.TrackPlayDislikeSVG alt="dislike">
                   <use xlinkHref="img/icon/sprite.svg#icon-dislike" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bar__volume-block volume">
-          <div className="volume__content">
-            <div className="volume__image">
-              <svg className="volume__svg" alt="volume">
+                </S.TrackPlayDislikeSVG>
+              </S.TrackPlayDislike>
+            </S.TrackLikeDis>
+          </S.PlayerTrackPlay>
+        </S.BarPlayer>
+        <S.BarVolumeBlock>
+          <S.VolumeContent>
+            <S.VolumeImage>
+              <S.VolumeSVG alt="volume">
                 <use xlinkHref="img/icon/sprite.svg#icon-volume" />
-              </svg>
-            </div>
-            <div className="volume__progress _btn">
-              <input
-                className="volume__progress-line _btn"
+              </S.VolumeSVG>
+            </S.VolumeImage>
+            <S.VolumeProgress>
+              <S.VolumeProgressLine
                 type="range"
                 name="range"
               />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </S.VolumeProgress>
+          </S.VolumeContent>
+        </S.BarVolumeBlock>
+      </S.BarPlayerBlock>
+    </S.BarContent>
+  </S.Bar>
   );
 }

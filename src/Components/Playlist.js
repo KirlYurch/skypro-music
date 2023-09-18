@@ -1,3 +1,5 @@
+import * as S from './PlayListStyle.js'
+
 export const playlists = [{
     id: 0,
     name: "day's playlist",
@@ -16,15 +18,14 @@ export const playlists = [{
 export function Playlist({ isLoading }) {
 
     const playlistItems = playlists.map(playlistItem => 
-        <div key={playlistItem.id} className="sidebar__item">
-            <a className="sidebar__link" href="http://">
-                {isLoading ? <div className="sidebar__img_loading" /> : <img
-                  className="sidebar__img"
+        <S.SidebarItem key={playlistItem.id}>
+            <S.SidebarLink href="http://">
+                {isLoading ? <S.ImgLoading/> : <S.Img
                   src={playlistItem.img}
                   alt={playlistItem.name}
                 />}
-            </a>
-        </div>
+            </S.SidebarLink>
+        </S.SidebarItem>
         )
 
     return (

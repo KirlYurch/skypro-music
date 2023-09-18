@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import AudioPlayer from "./Components/AudioPlayer";
 import NavMenu from "./Components/NavMenu";
 import Sidebar from "./Components/Sidebar";
 import Tracklist from "./Components/Tracklist";
+import * as S from './AppStyle';
+import GlobalStyle from './GlobalStyle.js';
+
 
 function delay(interval) {
   return new Promise((resolve) => {
@@ -23,21 +25,22 @@ function App() {
   }, []);
   
 
-
   return (
-  <div className="wrapper">
-    <div className="container">
-    <main className="main">
-      <NavMenu />
-      <Tracklist isLoading={loading}/>
-      <Sidebar isLoading={loading}/>
-    </main>
-    <AudioPlayer isLoading={loading} />
-    <footer className="footer" />
-  </div>
-</div>
-
-  );
+    <>
+        <GlobalStyle />
+        <S.Wrapper>
+            <S.Container>
+            <S.Main>
+                <NavMenu />
+                <Tracklist isLoading={loading}/>
+                <Sidebar isLoading={loading}/>
+            </S.Main>
+            <AudioPlayer isLoading={loading} />
+            <S.Footer />
+            </S.Container>
+        </S.Wrapper>
+    </>
+);
 }
 
 export default App;

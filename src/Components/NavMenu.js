@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as S from './NavMenuStyles.js'
 
 export default function NavMenu() {
   const [open, setOpen] = useState(false);
@@ -8,37 +9,35 @@ export default function NavMenu() {
   }
 
     return (
-        <nav className="main__nav nav">
-        <div className="nav__logo logo">
-          <img className="logo__image" src="img/logo.png" alt="logo" />
-        </div>
-        <button type="button" className="nav__burger burger" onClick={toggleOpen}>
-          <span className="burger__line" />
-          <span className="burger__line" />
-          <span className="burger__line" />
-        </button>
+        <S.MainNav>
+        <S.NavLogo>
+          <S.LogoImage src="img/logo.png" alt="logo" />
+        </S.NavLogo>
+        <S.NavBurger onClick={toggleOpen}>
+          <S.BurgerLine />
+          <S.BurgerLine />
+          <S.BurgerLine />
+        </S.NavBurger>
 
-        {open ? <div className="nav__menu menu">
-          <ul className="menu__list">
-            <li className="menu__item">
-              <a href="#" className="menu__link">
+        {open ? <S.NavMenu>
+          <S.MenuList>
+            <S.MenuItem>
+              <S.MenuLink href="#">
                 Главное
-              </a>
-            </li>
-            <li className="menu__item">
-              <a href="#" className="menu__link">
+              </S.MenuLink>
+            </S.MenuItem>
+            <S.MenuItem>
+              <S.MenuLink href="#">
                 Мой плейлист
-              </a>
-            </li>
-            <li className="menu__item">
-              <a href="#" className="menu__link">
+              </S.MenuLink>
+            </S.MenuItem>
+            <S.MenuItem>
+              <S.MenuLink href="#">
                 Войти
-              </a>
-            </li>
-          </ul>
-        </div> : null}
-        
-        
-      </nav>
+              </S.MenuLink>
+            </S.MenuItem>
+          </S.MenuList>
+        </S.NavMenu> : null}
+      </S.MainNav>
     );
 }
