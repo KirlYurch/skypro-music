@@ -22,17 +22,17 @@ export default function NavMenu() {
         {open ? <S.NavMenu>
           <S.MenuList>
             <S.MenuItem>
-              <S.MenuLink href="#">
+              <S.MenuLink to="/">
                 Главное
               </S.MenuLink>
             </S.MenuItem>
             <S.MenuItem>
-              <S.MenuLink href="#">
+              <S.MenuLink to="/favorites">
                 Мой плейлист
               </S.MenuLink>
             </S.MenuItem>
             <S.MenuItem>
-              <S.MenuLink href="#">
+              <S.MenuLink to="/login">
                 Войти
               </S.MenuLink>
             </S.MenuItem>
