@@ -16,6 +16,7 @@ function delay(interval) {
 
 export const  MainPage = () => {
 
+
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {

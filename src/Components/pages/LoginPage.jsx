@@ -1,7 +1,10 @@
 import GlobalStyle from '../../GlobalStyle.js';
 import * as S from "./LoginPageStyle.js";
 
-export const AppLogin = () => {
+
+export const AppLogin = ({ user, onAuthButtonClick }) => {
+    
+
     
     return (
         <div>
@@ -17,10 +20,11 @@ export const AppLogin = () => {
                         </a>
                         <S.ModalInputLogin type="text" name="login" placeholder="Почта" />
                         <S.ModalInput type="password" name="password" placeholder="Пароль" />
-                        <S.ModalBtnEnter type="button">
-                            <S.ModalBtnEnterA to="/">Войти</S.ModalBtnEnterA>
+                        <S.ModalBtnEnter type="button" onClick={onAuthButtonClick}  > 
+                            <S.ModalBtnEnterA to="/"> {!user ? "Войти" : "Выйти"}</S.ModalBtnEnterA>
+                            
                         </S.ModalBtnEnter>
-                        <S.ModalBtnSignup type="button">
+                        <S.ModalBtnSignup type="button" > 
                             <S.ModalBtnSignupA to="/registration">Зарегистрироваться</S.ModalBtnSignupA>
                         </S.ModalBtnSignup>
                     </S.ModalFormLogin>

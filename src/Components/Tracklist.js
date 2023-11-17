@@ -26,9 +26,9 @@ export default function Tracklist({ isLoading }) {
         <S.CenterblockH2>Треки</S.CenterblockH2>
         <S.CenterblockFilter >
         <S.FilterTitle>Искать по:</S.FilterTitle>
-          <Filter type='исполнителю' filterName={author} isActive={activeIndex === 1} onShow={() => setActiveIndex(1)} onHide={() => setActiveIndex(0)} />
-          <Filter type='году выпуска' filterName={years} isActive={activeIndex === 2} onShow={() => setActiveIndex(2)} onHide={() => setActiveIndex(0)} />
-          <Filter type='жанру' filterName={genres} isActive={activeIndex === 3} onShow={() => setActiveIndex(3)} onHide={() => setActiveIndex(0)} />          
+          <Filter type='Исполнителю' filterName={author} isActive={activeIndex === 1} onShow={() => setActiveIndex(1)} onHide={() => setActiveIndex(0)} />
+          <Filter type='Году выпуска' filterName={years} isActive={activeIndex === 2} onShow={() => setActiveIndex(2)} onHide={() => setActiveIndex(0)} />
+          <Filter type='Жанру' filterName={genres} isActive={activeIndex === 3} onShow={() => setActiveIndex(3)} onHide={() => setActiveIndex(0)} />          
         </S.CenterblockFilter>
         <S.CenterblockContent>
           <S.ContentTitle>
