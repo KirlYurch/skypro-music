@@ -1,4 +1,4 @@
-import { Playlist } from "./PlayList.js";
+import { Playlist } from "./PlayListFixed.js";
 import * as S from './SidebarStyle.js'
 
 export default function Sidebar({ isLoading }) {

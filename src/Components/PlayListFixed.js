@@ -1,4 +1,4 @@
-import * as S from './PlayListStyle.js'
+import * as S from './PlayListFixedStyle'
 
 export const playlists = [{
     id: 1,
